@@ -1,7 +1,7 @@
 pipeline {
  agent none
         string(name: 'BRANCH', description: 'Enter the branch to build', defaultValue: 'main')
-        string(name: 'GIT_REPO', description: 'Enter the repo url', defaultValue:'')
+        string(name: 'GIT_REPO', description: 'Enter the repo url', defaultValue:'https://github.com/mani017/Jenkinsfile.git')
         choice(name: 'STAGE', choices: ['build','deploy'], description: 'Stages to build')
     }
 
@@ -18,9 +18,8 @@ pipeline {
                         pwd 
                         ls
                         echo "This is a BUILD stage"
-                        sleep 5
-                   
-				   ''' 
+                      
+                   ''' 
                 }else {
 				echo "skipping the BUILD stage"
 				}  				
